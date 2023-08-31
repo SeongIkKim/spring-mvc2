@@ -96,24 +96,36 @@ public class BasicController {
 
     @GetMapping("/each")
     public String each(Model model) {
-        List<User> list = addUsers();
-
-        model.addAttribute("users", list);
+        addUsers(model);
         return "basic/each";
     }
 
     @GetMapping("/condition")
     public String condition(Model model) {
-        List<User> users = addUsers();
-        model.addAttribute("users", users);
+        addUsers(model);
         return "basic/condition";
     }
 
-    private List<User> addUsers() {
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
+    }
+
+    @GetMapping("/block")
+    public String block(Model model) {
+        // 태그에 each를 다는게 아니라 영역 지정하여 여러 태그를 iteration 하고싶을 때
+        // 렌더링 직후 block 태그는 제거됨
+        addUsers(model);
+        return "basic/block";
+    }
+
+    private List<User> addUsers(Model model) {
         List<User> list = new ArrayList<>();
         list.add(new User("userA", 10));
         list.add(new User("userB", 20));
         list.add(new User("userC", 30));
+        model.addAttribute("users", list);
         return list;
     }
 
