@@ -38,8 +38,7 @@
         <div>판매여부</div>
         <div>
             <div class="form-check">
-                <input type="checkbox" id="open" name="open" class="form-check-input"> <!--체크 되면 open=true로 가지만 체크되지 않으면 open=false 자체가 가지 않음!-->
-                <input type="hidden" name="_open" value="on"> <!--히든 필드 추가, springmvc가 동일한 id에 언더스코어를 붙인 필드가 있으면 체크되지 않았음을 인식하고 open=false로 넣어줌-->
+                <input type="checkbox" id="open" th:field="*{open}" class="form-check-input">
                 <label for="open" class="form-check-label">판매 오픈</label>
             </div>
         </div>
