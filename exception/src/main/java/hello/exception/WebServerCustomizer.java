@@ -6,7 +6,8 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-@Component
+// 이거 말고 BasicErrorController 사용
+//@Component
 public class WebServerCustomizer implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
 
     /**
