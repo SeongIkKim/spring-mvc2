@@ -11,6 +11,7 @@ public class WebServerCustomizer implements WebServerFactoryCustomizer<Configura
 
     /**
      * 커스텀 에러페이지 등록
+     * 등록된 예외코드가 던져지면, argument로 받은 에러페이지 path로 재요청을 보내어 응답값을 가져온다.
      */
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
